@@ -1,0 +1,151 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "python.pythonPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    
+    // Configurações para Jupyter Notebooks
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    //"jupyter.askForKernelRestart": false,
+    
+    "python.analysis.extraPaths": ["${workspaceFolder}"],
+    //"python.analysis.typeCheckingMode": "basic",
+    
+    // "python.languageServer": "None", // ms-python.vscode-pylance
+    // "python.testing.unittestEnabled": false, // ms-python.python
+    // "python.testing.pytestEnabled": true,
+    // "python.testing.pytestArgs": [], // -x to bail
+    
+    // Configurações do Pylint
+    "pylint.args": [
+      "--load-plugins=pylint_django",
+      "--django-settings-module=projeto.settings",
+      "--max-line-length=100",
+      "--disable=C0111,C0103,R0903,R0913,R0914,W0621,W0611,E5142"
+    ],
+    
+    // Configurações do Flake8
+    "flake8.args": [
+      "--max-line-length=130",
+      "--extend-ignore=E303,E203,W503,W291"
+    ],
+    
+    "mypy-type-checker.enabled": true,
+    // Configurações do MyPy
+    "mypy-type-checker.args": [
+        "--python-version=3.13.7",
+        "--warn-return-any",
+        "--warn-unused-configs",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--no-implicit-optional",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-no-return",
+        "--warn-unreachable",
+    ],
+
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.autopep8", // ms-python.python
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true,
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    },
+    
+    "cSpell.language": "en,pt,pt-BR",    
+    "cSpell.ignoreWords": [
+      "Alteracao",
+      "Cnpj",
+      "Decrescimo",
+      "Diaria",
+      "Inativacao",
+      "MYSQL",
+      "Maximo",
+      "Medio",
+      "Minimo",
+      "Preco",
+      "Promocao",
+      "Reseta",
+      "SGBI",
+      "Scanntech",
+      "Unitario",
+      "acrescimo",
+      "agurpamentos",
+      "aliquota",
+      "axhline",
+      "cest",
+      "cfop",
+      "codigo",
+      "cumsum",
+      "cursorclass",
+      "dataframe",
+      "dataframes",
+      "descricao",
+      "dotenv",
+      "figsize",
+      "fillna",
+      "funcionarios",
+      "horario",
+      "hostcenter",
+      "icms",
+      "indice",
+      "iterrows",
+      "itertuples",
+      "levelname",
+      "linestyle",
+      "logpdv",
+      "nivel",
+      "postgres",
+      "postgresql",
+      "preco",
+      "previsao",
+      "pymysql",
+      "redebomlugar",
+      "situacao",
+      "substituicao",
+      "twinx",
+      "unesgbi",
+      "verticalalignment",
+      "virtuaserver",
+      "xlabel",
+      "xticks",
+      "yaxis",
+      "ylabel"
+    ],
+        "cSpell.words": [
+          "autoflush",
+          "autorizacao",
+          "balanca",
+          "cnpj",
+          "departamentalizacao",
+          "integracao",
+          "isin",
+          "nullable",
+          "ordenacao",
+          "paginacao",
+          "razao",
+          "sessionmaker",
+          "sgsistemas",
+          "tagerino",
+          "usuario",
+          "Yoshiko"
+        ],
+
+    "material-icon-theme.folders.associations": {
+      "projeto": "project",
+      "API_SG": "api",
+      "API_Tagerino": "api"
+    },
+    "files.associations": {
+      "*.ipynb": "json"
+    },
+
+    "[json]": {
+      "files.eol": "\r\n"
+    },
+}
