@@ -1,0 +1,8 @@
+colorama==0.4.6
+greenlet==3.2.4
+psycopg2-binary==2.9.11
+setuptools==80.9.0
+SQLAlchemy==2.0.44
+tqdm==4.67.1
+typing_extensions==4.15.0
+wheel==0.45.1
