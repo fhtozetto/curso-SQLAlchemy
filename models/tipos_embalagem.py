@@ -14,6 +14,5 @@ class TipoEmbalagem(ModelBase):
     nome: orm.Mapped[str] = orm.mapped_column(sa.String(45), unique=True, nullable=False)
 
 
-
 def __repr__(self) -> str:
     return f'<Tipo Embalagem: {self.nome}>'

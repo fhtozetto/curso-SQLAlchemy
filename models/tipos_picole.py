@@ -4,6 +4,7 @@ import sqlalchemy.orm as orm
 from datetime import datetime
 
 from models.model_base import ModelBase
+from models.lote import Lote
 
 
 class TipoPicole(ModelBase):
@@ -13,6 +14,7 @@ class TipoPicole(ModelBase):
     data_criacao: orm.Mapped[datetime] = orm.mapped_column(sa.DateTime, default=datetime.now, index=True)
     nome: orm.Mapped[str] = orm.mapped_column(sa.String(45), unique=True, nullable=False)
 
+    lote: orm.Mapped['Lote'] = orm.Relationship(back_populates='tipo_picole')
 
 
 def __repr__(self) -> str:

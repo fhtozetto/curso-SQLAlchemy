@@ -6,8 +6,8 @@ from datetime import datetime
 from models.model_base import ModelBase
 
 
-class Sabores(ModelBase):
-    __tablename__: str = 'sabor'
+class Ingrediente(ModelBase):
+    __tablename__: str = 'ingredientes'
 
     id: orm.Mapped[int] = orm.mapped_column(sa.BigInteger, primary_key=True, autoincrement=True)
     data_criacao: orm.Mapped[datetime] = orm.mapped_column(sa.DateTime, default=datetime.now, index=True)
@@ -15,4 +15,4 @@ class Sabores(ModelBase):
 
 
 def __repr__(self) -> str:
-    return f'<Sabor: {self.nome}>'
+    return f'<Ingrediente: {self.nome}>'
