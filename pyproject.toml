@@ -1,0 +1,18 @@
+[project]
+name = "curso-sqlalchemy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "colorama==0.4.6",
+    "dotenv==0.9.9",
+    "greenlet==3.2.4",
+    "psycopg2-binary==2.9.11",
+    "python-dotenv==1.1.1",
+    "setuptools==80.9.0",
+    "sqlalchemy==2.0.44",
+    "tqdm==4.67.1",
+    "typing-extensions==4.15.0",
+    "wheel==0.45.1",
+]
