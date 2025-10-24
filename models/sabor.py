@@ -6,8 +6,8 @@ from datetime import datetime
 from models.model_base import ModelBase
 
 
-class Sabores(ModelBase):
-    __tablename__: str = 'sabor'
+class Sabor(ModelBase):
+    __tablename__: str = 'sabores'
 
     id: orm.Mapped[int] = orm.mapped_column(sa.BigInteger, primary_key=True, autoincrement=True)
     data_criacao: orm.Mapped[datetime] = orm.mapped_column(sa.DateTime, default=datetime.now, index=True)
