@@ -21,7 +21,7 @@ O SQL Alchemy é mais famoso pela sua ferramenta de ORM, apesar que este é um c
 - [x] Criando a Estrutura do Projeto - Parte 2
 - [x] Criando os models - Parte 1
 - [x] Criando os models - Parte 2
-- [ ] Criando os models - Parte 3
+- [x] Criando os models - Parte 3
 - [ ] Criando as tabelas no banco de dados
 
 ### Manipulando Dados com SQL Alchemy

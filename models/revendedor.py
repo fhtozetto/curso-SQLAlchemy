@@ -1,9 +1,11 @@
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
+from typing import List
 from datetime import datetime
 
 from models.model_base import ModelBase
+from models.nota_fiscal import NotaFiscal
 
 
 class Revendedor(ModelBase):
@@ -14,6 +16,8 @@ class Revendedor(ModelBase):
     cnpj: orm.Mapped[str] = orm.mapped_column(sa.String(45), unique=True, nullable=False)
     razao_social: orm.Mapped[str] = orm.mapped_column(sa.String(100), unique=True, nullable=False)
     contato: orm.Mapped[str] = orm.mapped_column(sa.String(100), nullable=False)
+
+    notas_fiscais: orm.Mapped[List['NotaFiscal']] = orm.relationship(back_populates='revendedor')
 
 
 def __repr__(self) -> str:
