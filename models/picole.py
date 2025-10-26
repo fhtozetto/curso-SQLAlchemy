@@ -73,7 +73,7 @@ class Picole(ModelBase):
 
     # Um picole pode ter vários ingredientes
     ingredientes: orm.Mapped[List['Ingrediente']] = orm.relationship(
-        secondary='ingredientes_picole', back_populates='ingredientes', lazy='dynamic')
+        secondary='ingredientes_picole', back_populates='picoles', lazy='dynamic')
 
     # Um picole pode ter vários conservantes ou mesmo nenhum
     conservantes: Optional[orm.Mapped[List['Conservante']]] = orm.relationship(

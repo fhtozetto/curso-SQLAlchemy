@@ -1,9 +1,11 @@
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
+from typing import List
 from datetime import datetime
 
 from models.model_base import ModelBase
+from models.picole import Picole
 
 
 class AditivoNutritivo(ModelBase):
@@ -13,6 +15,9 @@ class AditivoNutritivo(ModelBase):
     data_criacao: orm.Mapped[datetime] = orm.mapped_column(sa.DateTime, default=datetime.now, index=True)
     nome: orm.Mapped[str] = orm.mapped_column(sa.String(45), unique=True, nullable=False)
     formula_quimica: orm.Mapped[str] = orm.mapped_column(sa.String(45), unique=True, nullable=False)
+
+    picoles: orm.Mapped[List['Picole']] = orm.relationship(
+        secondary='aditivos_nutritivos_picole', back_populates='aditivos_nutritivos', lazy='dynamic')
 
 
 def __repr__(self) -> str:

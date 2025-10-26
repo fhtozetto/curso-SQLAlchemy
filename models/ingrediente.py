@@ -15,7 +15,7 @@ class Ingrediente(ModelBase):
     data_criacao: orm.Mapped[datetime] = orm.mapped_column(sa.DateTime, default=datetime.now, index=True)
     nome: orm.Mapped[str] = orm.mapped_column(sa.String(45), unique=True, nullable=False)
 
-    Picoles: orm.Mapped[List['Picole']] = orm.relationship(
+    picoles: orm.Mapped[List['Picole']] = orm.relationship(
         secondary='ingredientes_picole', back_populates='ingredientes', lazy='dynamic')
 
 
