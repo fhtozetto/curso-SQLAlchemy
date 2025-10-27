@@ -1,11 +1,16 @@
+from __future__ import annotations
+
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
-from typing import List
+from typing import List, TYPE_CHECKING
 from datetime import datetime
 
 from models.model_base import ModelBase
-from models.picole import Picole
+from models.conservantes_picole import conservantes_picole  # noqa: F401
+
+if TYPE_CHECKING:
+    from models.picole import Picole
 
 
 class Conservante(ModelBase):
@@ -17,7 +22,7 @@ class Conservante(ModelBase):
     descricao: orm.Mapped[str] = orm.mapped_column(sa.String(45), nullable=False)
 
     picoles: orm.Mapped[List['Picole']] = orm.relationship(
-        secondary='conservantes_picole', back_populates='conservantes', lazy='dynamic')
+        secondary='conservantes_picole', back_populates='conservantes')
 
 
 def __repr__(self) -> str:

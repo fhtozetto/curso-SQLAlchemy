@@ -1,11 +1,13 @@
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
-from typing import List
+from typing import List, TYPE_CHECKING
 from datetime import datetime
 
 from models.model_base import ModelBase
-from models.nota_fiscal import NotaFiscal
+
+if TYPE_CHECKING:
+    from models.nota_fiscal import NotaFiscal
 
 
 class Revendedor(ModelBase):

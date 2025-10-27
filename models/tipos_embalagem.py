@@ -1,11 +1,15 @@
+from __future__ import annotations
+
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
-from typing import List
+from typing import List, TYPE_CHECKING
 from datetime import datetime
 
 from models.model_base import ModelBase
-from models.picole import Picole
+
+if TYPE_CHECKING:
+    from models.picole import Picole
 
 
 class TipoEmbalagem(ModelBase):
@@ -15,7 +19,7 @@ class TipoEmbalagem(ModelBase):
     data_criacao: orm.Mapped[datetime] = orm.mapped_column(sa.DateTime, default=datetime.now, index=True)
     nome: orm.Mapped[str] = orm.mapped_column(sa.String(45), unique=True, nullable=False)
 
-    picoles: orm.Mapped[List['Picole']] = orm.relationship(back_populates='tipo_tipo_embalagem')
+    picoles: orm.Mapped[List['Picole']] = orm.relationship(back_populates='tipos_embalagem')
 
 
 def __repr__(self) -> str:

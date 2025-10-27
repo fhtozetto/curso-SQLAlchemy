@@ -1,11 +1,17 @@
+from __future__ import annotations
+
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
-from typing import List
+from typing import List, TYPE_CHECKING
 from datetime import datetime
 
 from models.model_base import ModelBase
-from models.picole import Picole
+
+from models.aditivos_nutritivos_picole import aditivos_nutritivos_picole  # noqa: F401
+
+if TYPE_CHECKING:
+    from models.picole import Picole
 
 
 class AditivoNutritivo(ModelBase):
@@ -17,7 +23,7 @@ class AditivoNutritivo(ModelBase):
     formula_quimica: orm.Mapped[str] = orm.mapped_column(sa.String(45), unique=True, nullable=False)
 
     picoles: orm.Mapped[List['Picole']] = orm.relationship(
-        secondary='aditivos_nutritivos_picole', back_populates='aditivos_nutritivos', lazy='dynamic')
+        secondary='aditivos_nutritivos_picole', back_populates='aditivos_nutritivos')
 
 
 def __repr__(self) -> str:

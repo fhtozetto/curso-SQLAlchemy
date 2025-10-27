@@ -78,7 +78,7 @@ def create_tables() -> None:
     if not __engine:
         create_engine(sqlite=__SQLITE)  # Para rodar com SQLite / create_engine(sqlite=True)
 
-    import models.__all_models  # noqa: F401
+    # import models.__all_models  # noqa: F401
     if __DROP_TABLES:
         ModelBase.metadata.drop_all(__engine)
     if __CREATE_TABLES:
