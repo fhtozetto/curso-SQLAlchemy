@@ -55,5 +55,5 @@ class Picole(ModelBase):
         secondary='aditivos_nutritivos_picole', back_populates='picoles')
 
 
-def __repr__(self) -> str:
-    return f'<Lote: {self.tipo_picole.nome} com sabor {self.sabor.nome} e preço {self.preco}>'
+    def __repr__(self) -> str:
+        return f'<Picole: {self.tipo_picole.nome} com sabor {self.sabor.nome} e preço {self.preco}>'
