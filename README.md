@@ -27,7 +27,7 @@ O SQL Alchemy é mais famoso pela sua ferramenta de ORM, apesar que este é um c
 ### Manipulando Dados com SQL Alchemy
 - [x] Entendendo o Padrão Unit of Work
 - [x] Inserindo Dados - Create (Insert) - Parte 1
-- [ ] Inserindo Dados - Create (Insert) - Parte 2
+- [x] Inserindo Dados - Create (Insert) - Parte 2
 - [ ] Zerando e Populando o Banco de Dados
 - [ ] Buscando Dados - Read (Select) - Parte 1
 - [ ] Buscando Dados - Read (Select) - Parte 2
