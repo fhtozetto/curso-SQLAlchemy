@@ -2,7 +2,7 @@ from conf.db_session import create_session
 from models.revendedor import Revendedor
 
 
-def insert() -> None:
+def insert() -> Revendedor:
     print('Cadastrando de Revendedores')
 
     cnpj: str = input('Informe o CNPJ do revendedor: ')
@@ -15,13 +15,15 @@ def insert() -> None:
         session.add(revendedor)
         session.commit()
 
-    print('Revendedor cadastrado com sucesso!')
-    print(f'          ID: {revendedor.id}')
-    print(f'        Data: {revendedor.data_criacao}')
-    print(f'        CNPJ: {revendedor.cnpj}')
-    print(f'Razão Social: {revendedor.razao_social}')
-    print(f'     Contato: {revendedor.contato}')
+        return revendedor
 
 
 if __name__ == '__main__':
-    insert()
+    rev = insert()
+
+    print('Revendedor cadastrado com sucesso!')
+    print(f'          ID: {rev.id}')
+    print(f'        Data: {rev.data_criacao}')
+    print(f'        CNPJ: {rev.cnpj}')
+    print(f'Razão Social: {rev.razao_social}')
+    print(f'     Contato: {rev.contato}')

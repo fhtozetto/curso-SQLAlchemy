@@ -2,7 +2,7 @@ from conf.db_session import create_session
 from models.sabor import Sabor
 
 
-def insert() -> None:
+def insert() -> Sabor:
     print('Cadastrando de Sabores')
 
     nome: str = input('Informe o nome do sabor: ')
@@ -13,11 +13,13 @@ def insert() -> None:
         session.add(sabor)
         session.commit()
 
-    print('Sabor cadastrado com sucesso!')
-    print(f'     ID: {sabor.id}')
-    print(f'   Data: {sabor.data_criacao}')
-    print(f'   Nome: {sabor.nome}')
+        return sabor
 
 
 if __name__ == '__main__':
-    insert()
+    sab = insert()
+
+    print('Sabor cadastrado com sucesso!')
+    print(f'     ID: {sab.id}')
+    print(f'   Data: {sab.data_criacao}')
+    print(f'   Nome: {sab.nome}')

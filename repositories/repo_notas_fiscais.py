@@ -4,7 +4,7 @@ from models.nota_fiscal import NotaFiscal
 from decimal import Decimal
 
 
-def insert() -> None:
+def insert() -> NotaFiscal:
     print('Cadastrando de Lote de Picoles')
 
     valor: Decimal = Decimal(input('Informe o valor da NF: '))
@@ -24,14 +24,16 @@ def insert() -> None:
         session.add(nota_fiscal)
         session.commit()
 
-    print('Nota Fiscal cadastrada com sucesso!')
-    print(f'              ID: {nota_fiscal.id}')
-    print(f'            Data: {nota_fiscal.data_criacao}')
-    print(f'           Valor: {nota_fiscal.valor}')
-    print(f' Numero de Serie: {nota_fiscal.numero_serie}')
-    print(f'       Descrição: {nota_fiscal.descricao}')
-    print(f'ID do Revendedor: {nota_fiscal.id_revendedor}')
+        return nota_fiscal
 
 
 if __name__ == '__main__':
-    insert()
+    nf = insert()
+
+    print('Nota Fiscal cadastrada com sucesso!')
+    print(f'              ID: {nf.id}')
+    print(f'            Data: {nf.data_criacao}')
+    print(f'           Valor: {nf.valor}')
+    print(f' Numero de Serie: {nf.numero_serie}')
+    print(f'       Descrição: {nf.descricao}')
+    print(f'ID do Revendedor: {nf.id_revendedor}')

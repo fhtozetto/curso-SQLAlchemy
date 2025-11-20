@@ -2,7 +2,7 @@ from conf.db_session import create_session
 from models.tipos_picole import TipoPicole
 
 
-def insert() -> None:
+def insert() -> TipoPicole:
     print('Cadastrando de Tipo de Picoles')
 
     nome: str = input('Informe o tipo de picole: ')
@@ -13,11 +13,13 @@ def insert() -> None:
         session.add(tipo_picole)
         session.commit()
 
-    print('Tipo de picole cadastrado com sucesso!')
-    print(f'     ID: {tipo_picole.id}')
-    print(f'   Data: {tipo_picole.data_criacao}')
-    print(f'   Nome: {tipo_picole.nome}')
+        return tipo_picole
 
 
 if __name__ == '__main__':
-    insert()
+    tp = insert()
+
+    print('Tipo de picole cadastrado com sucesso!')
+    print(f'     ID: {tp.id}')
+    print(f'   Data: {tp.data_criacao}')
+    print(f'   Nome: {tp.nome}')

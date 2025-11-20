@@ -2,7 +2,7 @@ from conf.db_session import create_session
 from models.ingrediente import Ingrediente
 
 
-def insert() -> None:
+def insert() -> Ingrediente:
     print('Cadastrando de Ingrediente')
 
     nome: str = input('Informe o nome do ingrediente: ')
@@ -13,11 +13,13 @@ def insert() -> None:
         session.add(ingrediente)
         session.commit()
 
-    print('Ingrediente cadastrado com sucesso!')
-    print(f'     ID: {ingrediente.id}')
-    print(f'   Data: {ingrediente.data_criacao}')
-    print(f'   Nome: {ingrediente.nome}')
+        return ingrediente
 
 
 if __name__ == '__main__':
-    insert()
+    ing = insert()
+
+    print('Ingrediente cadastrado com sucesso!')
+    print(f'     ID: {ing.id}')
+    print(f'   Data: {ing.data_criacao}')
+    print(f'   Nome: {ing.nome}')

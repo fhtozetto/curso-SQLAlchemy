@@ -2,7 +2,7 @@ from conf.db_session import create_session
 from models.lote import Lote
 
 
-def insert() -> None:
+def insert() -> Lote:
     print('Cadastrando de Lote de Picoles')
 
     id_tipo_picole: int = int(input('Informe o ID do tipo de picole: '))
@@ -14,12 +14,14 @@ def insert() -> None:
         session.add(lote)
         session.commit()
 
-    print('Tipo de picole cadastrado com sucesso!')
-    print(f'            ID: {lote.id}')
-    print(f'          Data: {lote.data_criacao}')
-    print(f'ID Tipo Picole: {lote.id_tipo_picole}')
-    print(f'    Quantidade: {lote.quantidade}')
+        return lote
 
 
 if __name__ == '__main__':
-    insert()
+    lo = insert()
+
+    print('Tipo de picole cadastrado com sucesso!')
+    print(f'            ID: {lo.id}')
+    print(f'          Data: {lo.data_criacao}')
+    print(f'ID Tipo Picole: {lo.id_tipo_picole}')
+    print(f'    Quantidade: {lo.quantidade}')

@@ -2,7 +2,7 @@ from conf.db_session import create_session
 from models.tipos_embalagem import TipoEmbalagem
 
 
-def insert() -> None:
+def insert() -> TipoEmbalagem:
     print('Cadastrando de Tipo de Embalagens')
 
     nome: str = input('Informe o tipo de embalagem: ')
@@ -13,11 +13,13 @@ def insert() -> None:
         session.add(tipo_embalagem)
         session.commit()
 
-    print('Tipo de embalagem cadastrado com sucesso!')
-    print(f'     ID: {tipo_embalagem.id}')
-    print(f'   Data: {tipo_embalagem.data_criacao}')
-    print(f'   Nome: {tipo_embalagem.nome}')
+        return tipo_embalagem
 
 
 if __name__ == '__main__':
-    insert()
+    te = insert()
+
+    print('Tipo de embalagem cadastrado com sucesso!')
+    print(f'     ID: {te.id}')
+    print(f'   Data: {te.data_criacao}')
+    print(f'   Nome: {te.nome}')

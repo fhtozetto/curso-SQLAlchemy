@@ -4,7 +4,7 @@ from models.picole import Picole
 from decimal import Decimal
 
 
-def insert() -> None:
+def insert() -> Picole:
     print('Cadastrando de Lote de Picoles')
 
     preco: Decimal = Decimal(input('Informe o preço do picole: '))
@@ -24,14 +24,16 @@ def insert() -> None:
         session.add(picole)
         session.commit()
 
-    print('Tipo de picole cadastrado com sucesso!')
-    print(f'               ID: {picole.id}')
-    print(f'             Data: {picole.data_criacao}')
-    print(f'            Preço: {picole.preco}')
-    print(f'         ID Sabor: {picole.id_sabor}')
-    print(f'ID Tipo Embalagem: {picole.id_tipo_embalagem}')
-    print(f'   ID Tipo Picole: {picole.id_tipo_picole}')
+        return picole
 
 
 if __name__ == '__main__':
-    insert()
+    pi = insert()
+
+    print('Tipo de picole cadastrado com sucesso!')
+    print(f'               ID: {pi.id}')
+    print(f'             Data: {pi.data_criacao}')
+    print(f'            Preço: {pi.preco}')
+    print(f'         ID Sabor: {pi.id_sabor}')
+    print(f'ID Tipo Embalagem: {pi.id_tipo_embalagem}')
+    print(f'   ID Tipo Picole: {pi.id_tipo_picole}')

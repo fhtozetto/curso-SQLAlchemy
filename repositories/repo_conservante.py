@@ -2,7 +2,7 @@ from conf.db_session import create_session
 from models.conservante import Conservante
 
 
-def insert() -> None:
+def insert() -> Conservante:
     print('Cadastrando de Conservantes')
 
     nome: str = input('Informe o nome do conservantes: ')
@@ -14,12 +14,14 @@ def insert() -> None:
         session.add(conservante)
         session.commit()
 
-    print('Conservante cadastrado com sucesso!')
-    print(f'       ID: {conservante.id}')
-    print(f'     Data: {conservante.data_criacao}')
-    print(f'     Nome: {conservante.nome}')
-    print(f'Descrição: {conservante.descricao}')
+        return conservante
 
 
 if __name__ == '__main__':
-    insert()
+    con = insert()
+
+    print('Conservante cadastrado com sucesso!')
+    print(f'       ID: {con.id}')
+    print(f'     Data: {con.data_criacao}')
+    print(f'     Nome: {con.nome}')
+    print(f'Descrição: {con.descricao}')
